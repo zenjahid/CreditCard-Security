@@ -1,7 +1,7 @@
 # Credit Card Security
-Welcome to a succinct yet thorough exploration of credit card security, focusing on the mechanisms of theft and misuse. This guide delves into the operational foundations of credit cards, shedding light on their functionality and the vulnerabilities that fraudsters exploit. By understanding the inner workings of credit card transactions, we equip ourselves with the knowledge to identify and prevent potential threats, safeguarding our financial integrity against unauthorized access and abuse.
+Welcome to an insightful guide on credit card security, emphasizing the mechanisms behind theft and misuse. This comprehensive resource explores the operational principles of credit cards, revealing how they function and the vulnerabilities that fraudsters exploit. By gaining a deeper understanding of credit card transactions, we empower ourselves with the knowledge to identify and prevent potential threats, thus protecting our financial integrity from unauthorized access and abuse.
 
-Feel free to correct any mistakes. This guide was written in an attempt to learn about credit cards, and may contain mistakes.
+Please note, this guide is part of an ongoing effort to learn about credit cards and may contain inaccuracies.
 
 ## Disclaimer
 
@@ -32,7 +32,7 @@ I strongly advise against any illegal actions and recommend always adhering to t
 
 
 ## Introduction
-Within this repository, I aim to demystify the various facets of credit card fraud by compiling a comprehensive list of information on the subject. Recognizing the scarcity of detailed resources available online and the critical importance of this issue, I felt compelled to create this guide. It is designed exclusively for educational purposes, with the goal of enlightening individuals on the intricacies of credit card security. By providing this knowledge, my intention is to equip people with the tools they need to protect themselves and to promote a broader understanding of how to navigate the complexities of financial security in today's digital world.
+In this article, I aim to demystify the various aspects of credit card fraud by compiling a comprehensive resource on the subject. Given the scarcity of detailed information available online and the critical importance of this issue, I felt compelled to create this guide. It is designed exclusively for educational purposes, with the goal of enlightening individuals on the intricacies of credit card security. By sharing this knowledge, my intention is to equip people with the tools they need to protect themselves and promote a broader understanding of how to navigate the complexities of financial security in today's digital world.
 
 ## How are Credit Cards Stolen?
 There are numerous ways that the details of a credit card can be stolen. This list includes the most creative and common ways it can be done. But there are certainly more ways it could be done.
@@ -46,18 +46,18 @@ Have you ever noticed how many mirror selfies there are on social media platform
 You might notice that his fingers cover up parts of the number. Well, that might not be enough. Let me explain what the card numbers mean.
 
 #### Explaining the Numbers
-Let's say we have the following card number:\
+Let's consider the following card number:\
 `4106510012385673`
 
-These numbers are not completely random. The very first number (MII) reveals the card's issuing entity. Below is a list of which first numbers correspond to which issuing entity:
+These numbers are not completely random. The very first number (MII) reveals the card's issuing entity. Here is a list of which first numbers correspond to which network:
 
 3: American Express\
 4: Visa\
 5: Mastercard
 
-And if we take the first 6 digits (410665), we have the BIN (Bank Identification Number). This is key to identifying the bank that issued the card. You can find several [good lists](https://github.com/iannuttall/binlist-data) and [pages online](https://binlist.net/) for identifying which banks are connected to these numbers. This means that, if we know which bank issued the card, we also know the first 6 digits. Often, the logo of the bank is visible on the card, making it very easy to guess.
+The first 6 digits (410651) represent the BIN (Bank Identification Number). This number is crucial for identifying the bank that issued the card. You can find several [good lists](https://github.com/iannuttall/binlist-data) and [websites](https://binlist.net/) for identifying which banks are associated with these numbers. This means that, if we know which bank issued the card, we also know the first 6 digits. Often, the logo of the bank is visible on the card, making it very easy to guess.
 
-The rest of the numbers are generated at random, to a certain extent. They are actually generated using the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm), or MOD10. This is the algorithm used by websites to check that your card details are valid. It is **not** an algorithm for security, it is simply an algorithm for avoiding accidental errors.
+The remaining numbers are generated using a specific method, known as the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm), or MOD10. This is the algorithm used by websites to check that your card details are valid. It is **not** an algorithm for security, it is simply an algorithm for avoiding accidental errors.
 
 #### Guessing the Card Number
 So, suppose a digit is missing from the card number. Knowing that the card uses the Luhn algorithm means that there is only one correct digit. Let's make a quick Python script to brute force the missing digit:
